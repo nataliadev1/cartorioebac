@@ -1,3 +1,4 @@
+
 #include <stdio.h> //biblioteca de comunicação com o usuário
 #include <stdlib.h> //biblioteca de alocação de espaço de memória
 #include <locale.h> //biblioteca de alocações de texto por região
@@ -14,51 +15,51 @@ int registrar() //função responsável por cadastrar os usuários no sistema
 	char cargo[40];
 	//final da criaçã de variáveis/string
 	
-	printf("Digite o CPF a ser cadastrado: \n"); //coletar informação do usuário
-	scanf("%s",cpf); //%s se refere a string (salvar)
+	printf("\tVocê selecionou registro.\n\n\tDigite o CPF a ser cadastrado: \n"); //coletar informação do usuário para definir CPF
+	scanf("%s",cpf); // "%s" serve para armazenar uma string (salvar)
 	
 	strcpy(arquivo, cpf); //responsável por copiar os valores das strings
 	FILE *file; //cria o arquivo
 
-	file = fopen(arquivo, "w"); //cria o arquivo
+	file = fopen(arquivo, "w"); // fopen abre o arquivo e "w" escreve os dados da variável.
 	fprintf(file,"CPF: ");	
-	fprintf(file,cpf); //salva o valor da variável
-	fclose(file); //fecha o arquivo
+	fprintf(file,cpf); // fprintf serve para salvar a variável.
+	fclose(file); // fclose fecha o arquivo.
 	
-	file = fopen(arquivo, "a"); //atualizar
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,"; Nome: ");
 	fclose(file);
 	
 	printf("Digite o nome: \n");
 	scanf("%s",nome);
 	
-	file = fopen(arquivo, "a"); //atualizar
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,nome);
 	fclose(file);
 	
-	file = fopen(arquivo, "a"); //atualizar
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,"; Sobrenome: ");
 	fclose(file);
 	
 	printf("Digite o sobrenome: \n");
 	scanf("%s",sobrenome);
 	
-	file = fopen(arquivo, "a"); //atualizar
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,sobrenome);
 	fclose(file);
 	
-	file = fopen(arquivo, "a"); //atualizar
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,"; Cargo: ");
 	fclose(file);
 	
 	printf("Digite o cargo: \n");
 	scanf("%s",cargo);
 	
-	file = fopen(arquivo, "a"); //atualizar
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,cargo);
 	fclose(file);
 	
-	file = fopen(arquivo, "a"); //atualizar o arquivo
+	file = fopen(arquivo, "a"); // "a" server para atualizar o arquivo existente
 	fprintf(file,";");
 	fclose(file);
 	
@@ -66,7 +67,7 @@ int registrar() //função responsável por cadastrar os usuários no sistema
 
 int consultar()
 {
-	setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
+	setlocale(LC_ALL, "Portuguese"); //definir a linguagem
 	
 	char cpf[40];
 	char conteudo[200];
@@ -135,7 +136,7 @@ int main ()
 		printf("Escolha a opção desejada do menu: \n\n"); //início do menu \n pula linha
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
+		printf("\t3 - Deletar nomes\n");
 		printf("\t4 - Sair do sistema\n\n"); 
 		printf("Opção: "); //fim do menu
 	
